@@ -1,3 +1,5 @@
+#![feature(plugin)]
+#![plugin(dotenv_macros)]
 extern crate dotenv;
 
 use dotenv::*;
@@ -21,4 +23,9 @@ fn test_dotenv_child_dir() {
     assert_eq!("./main.rs".to_string(), path_string);
     dotenv().ok();
     assert_eq!(env::var("TESTKEY").unwrap(), "test_val");
+}
+
+#[test]
+fn test_dotenv_macro() {
+    assert_eq!(dotenv!("TESTKEY"), "test_val");
 }

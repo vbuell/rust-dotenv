@@ -17,7 +17,7 @@ repository = "https://github.com/slapresta/rust-dotenv"
 description = "A `dotenv` implementation for Rust"
 
 [dependencies]
-dotenv_codegen = { version = "0.10.0", default-features = false }
+dotenv_codegen = { path = "../dotenv_codegen", default-features = false }
 
 [lib]
 name = "dotenv_macros"
